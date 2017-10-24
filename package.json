@@ -1,0 +1,30 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "this is a shopping app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chloexian/shopping.git"
+  },
+  "keywords": [
+    "express",
+    "shopping",
+    "nodejs"
+  ],
+  "author": "chloexian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chloexian/shopping/issues"
+  },
+  "homepage": "https://github.com/chloexian/shopping#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "serve-favicon": "^2.4.5"
+  }
+}
