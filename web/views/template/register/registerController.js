@@ -11,7 +11,7 @@ angular.module('app')
                 if(!validRegister()){
                   return;
                 }
-            }
+            
 
             API.fetchPost('/register',$scope.data)
               .then(function(data){
@@ -20,6 +20,8 @@ angular.module('app')
               .catch(function(err){
                console.log('err==',err)
               })
+
+              }
 
    	    function validRegister() {
          console.log($scope.data);
@@ -67,6 +69,7 @@ angular.module('app')
             utils.tips.showTips('两次密码不一致')
             return false;
          }
+         return true;
       }
 
    }])
