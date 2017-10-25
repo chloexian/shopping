@@ -21,6 +21,13 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 				'/template/register/registerController.js',
 		 				'/template/register/register.css'
 		 			]
+		 		},
+		 		{
+		 			name: 'login',
+		 			files: [
+		 				'/template/login/loginController.js',
+		 				'/template/login/login.css'
+		 			]
 		 		}
 	 		]
  		});
