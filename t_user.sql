@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-10-24 17:13:58
+Date: 2017-10-25 18:30:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,11 +25,12 @@ CREATE TABLE `t_user` (
   `nickname` varchar(100) NOT NULL,
   `pwd` varchar(32) NOT NULL,
   `phone` varchar(11) DEFAULT NULL,
-  `regtime` datetime NOT NULL,
+  `regtime` datetime DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', '12@qq.com', 'kang', '12454874', '11234567', '2017-10-19 17:11:19');
+INSERT INTO `t_user` VALUES ('5', '158@qq.com', '27355242', '25d55ad283aa400af464c76d713c07ad', '', null);
+INSERT INTO `t_user` VALUES ('4', '12@qq.com', 'jksd', '12345678', '15811111111', null);

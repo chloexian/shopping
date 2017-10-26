@@ -6,4 +6,7 @@ module.exports = function (app) {
 
 	app.post('/register', RoutesController.registerController);
 
+	 app.post('/login', RoutesController.loginController);
+	 app.get('/main/home', RoutesController.homeController);
+
 }

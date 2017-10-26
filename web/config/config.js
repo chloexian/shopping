@@ -10,6 +10,9 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
  app.service = $provide.service;
  app.constant = $provide.constant;
 }])
+	.config(['$ionicConfigProvider', function ($ionicConfigProvider) {
+		$ionicConfigProvider.tabs.position('bottom');
+	}])
 	.config(["$ocLazyLoadProvider", function ($ocLazyLoadProvider) {
 		$ocLazyLoadProvider.config({
 	 		debug: false,
@@ -27,6 +30,20 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 			files: [
 		 				'/template/login/loginController.js',
 		 				'/template/login/login.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'main.home',
+		 			files: [
+		 				'/template/home/homeController.js',
+		 				'/template/home/home.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'details',
+		 			files: [
+		 				'/template/details/detailsController.js',
+		 				'/template/details/details.css'
 		 			]
 		 		}
 	 		]
