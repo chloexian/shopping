@@ -1,8 +1,7 @@
 angular.module('app')
-	.controller('detailsController', ['$scope','$stateParams','API','utils', function ($scope,$stateParams,API,utils) {
-        $scope.count = 1;
-        utils.tips.showLoadTips();
-        API.fetchGet('/details/' + $stateParams.id,$stateParams)
+  .controller('commentController',['$scope','$stateParams','API','utils',function($scope,$stateParams,API,utils){
+       utils.tips.showLoadTips();
+        API.fetchGet('/comment/' + $stateParams.id,$stateParams)
           .then(function(data){
              $scope.data=data.data;
              utils.tips.hideLoadTips();
@@ -11,4 +10,4 @@ angular.module('app')
                 console.log(err);
                 utils.tips.hideLoadTips();
           })
-	}])
+  }])

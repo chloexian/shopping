@@ -3,4 +3,7 @@ angular.module('app')
         $rootScope.goPage =  function(stateName,params){
         	$state.go(stateName,params);
         }
+        $rootScope.goBack = function(){
+          history.go(-1)
+        }
    }])

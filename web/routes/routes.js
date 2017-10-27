@@ -23,6 +23,17 @@ angular.module('app')
         url: '/main/find',
         templateUrl: '/template/find/find.html'
       })
+      .state('main.shopcart', {
+        url: '/main/shopcart',
+        templateUrl: '/template/shopcart/shopcart.html',
+        controller: 'shopcartController',
+        cache:false,
+        resolve: {
+          des: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load('main.shopcart');
+          }]
+        }
+      })
       .state('register', {
         url: '/register',
         templateUrl: '/template/register/register.html',
@@ -46,12 +57,22 @@ angular.module('app')
         }
       })
        .state('details', {
-        url: '/details',
+        url: '/details/:id',
         templateUrl: '/template/details/details.html',
         controller: 'detailsController',
         resolve: {
           des: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load('details');
+          }]
+        }
+      })
+       .state('comment', {
+        url: '/comment/:id',
+        templateUrl: '/template/comment/comment.html',
+        controller: 'commentController',
+        resolve: {
+          des: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load('comment');
           }]
         }
       })

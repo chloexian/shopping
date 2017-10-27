@@ -45,7 +45,21 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 				'/template/details/detailsController.js',
 		 				'/template/details/details.css'
 		 			]
-		 		}
+		 		},
+		 		{
+		 			name: 'comment',
+		 			files: [
+		 				'/template/comment/commentController.js',
+		 				'/template/comment/comment.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'main.shopcart',
+		 			files: [
+		 				'/template/shopcart/shopcartController.js',
+		 				'/template/shopcart/shopcart.css'
+		 			]
+		 		},
 	 		]
  		});
 	}]);
