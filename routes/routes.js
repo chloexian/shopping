@@ -2,13 +2,21 @@ const RoutesController = require(__basename + '/routesController/routesControlle
 
 module.exports = function (app) {
 
-	app.get('/', RoutesController.homeController);
+	app.get('/', RoutesController.rootController);
 
 	app.post('/register', RoutesController.registerController);
 
-	 app.post('/login', RoutesController.loginController);
-	 app.get('/main/home', RoutesController.homeController);
-	 app.get('/details/:id', RoutesController.detailsController);
-     app.get('/comment/:id', RoutesController.commentController);
-     app.get('/main/shopcart/:email', RoutesController.shopcartController);
+	app.post('/login', RoutesController.loginController);
+
+	app.get('/main/home', RoutesController.homeController);
+
+	app.get('/details/:id', RoutesController.detailsController);
+
+	app.get('/comment/:id', RoutesController.commentController);
+
+	app.get('/main/shopcart/:id', RoutesController.shopcartController);
+
+	app.put('/shopCart/:id', RoutesController.addShopcartController);
+    
+    app.get('/settle/:id', RoutesController.settleController);
 }

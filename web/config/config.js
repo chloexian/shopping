@@ -21,45 +21,62 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 		{
 		 			name: 'register',
 		 			files: [
-		 				'/template/register/registerController.js',
-		 				'/template/register/register.css'
+		 				'/templates/register/registerController.js',
+		 				'/templates/register/register.css'
 		 			]
 		 		},
 		 		{
 		 			name: 'login',
 		 			files: [
-		 				'/template/login/loginController.js',
-		 				'/template/login/login.css'
+		 				'/templates/login/loginController.js',
+		 				'/templates/login/login.css'
 		 			]
 		 		},
 		 		{
 		 			name: 'main.home',
 		 			files: [
-		 				'/template/home/homeController.js',
-		 				'/template/home/home.css'
-		 			]
-		 		},
-		 		{
-		 			name: 'details',
-		 			files: [
-		 				'/template/details/detailsController.js',
-		 				'/template/details/details.css'
-		 			]
-		 		},
-		 		{
-		 			name: 'comment',
-		 			files: [
-		 				'/template/comment/commentController.js',
-		 				'/template/comment/comment.css'
+		 				'/templates/home/homeController.js',
+		 				'/templates/home/home.css'
 		 			]
 		 		},
 		 		{
 		 			name: 'main.shopcart',
 		 			files: [
-		 				'/template/shopcart/shopcartController.js',
-		 				'/template/shopcart/shopcart.css'
+		 				'/templates/shopcart/shopcartController.js',
+		 				'/templates/shopcart/shopcart.css'
 		 			]
 		 		},
+
+		 		{
+		 			name: 'main.home',
+		 			files: [
+		 				'/templates/home/homeController.js',
+		 				'/templates/home/home.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'details',
+		 			files: [
+		 				'/templates/details/detailsController.js',
+		 				'/templates/details/details.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'comment',
+		 			files: [
+		 				'/templates/comment/commentController.js',
+		 				'/templates/comment/comment.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'settle',
+		 			files: [
+		 				'/templates/settle/settleController.js',
+		 				'/templates/settle/settle.css'
+		 			]
+		 		}
+
+
 	 		]
  		});
 	}]);

@@ -1,11 +1,11 @@
-const mysql = require (__basename + '/lib/mysql/mysql.js');
+const mysql = require(__basename + '/lib/mysql/mysql.js');
 
 class Service {
-	constructor(){}
+	constructor () {}
 
-	query(sql){
+	query (sql) {
 		return mysql.query(sql);
 	}
 }
 
-module.exports = new Service()
+module.exports = new Service();
