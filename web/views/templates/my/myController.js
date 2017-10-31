@@ -1,10 +1,10 @@
 angular.module('app')
-	.controller('homeController', ['$scope', 'API', 'utils', function ($scope, API, utils) {
-
+	.controller('myController', ['$rootScope', '$scope', 'API', 'utils', function ($rootScope, $scope, API, utils) {
+		
 		utils.tips.showLoadTips();
-		API.fetchGet('/main/home')
+		API.fetchGet('/my', {email: $rootScope.user.email})
 			.then(function (data) {
-				$scope.data = data.data;
+				$scope.data = data;
 				utils.tips.hideLoadTips();
 			})
 			.catch(function (err) {

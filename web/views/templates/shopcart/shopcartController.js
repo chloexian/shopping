@@ -13,5 +13,7 @@ angular.module('app')
 				console.log(err);
 				utils.tips.hideLoadTips();
 			})
+
+			
 		
 	}])

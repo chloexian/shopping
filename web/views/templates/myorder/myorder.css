@@ -1,0 +1,9 @@
+.myorder{
+	background-color: #efefef;
+}
+
+
+
+.myorder .btn{
+	float: right;
+}
