@@ -108,18 +108,16 @@ class RoutesController {
 	}
 
 	addShopcartController (req, res) {
-		console.log('req.query ==> ', req.query);
 		let addshopcartsql = SQL.insertOneForShopcart(req.query);
 		service.query(addshopcartsql)
 			.then((result) => {
-				console.log('result ==> ', result);
 				res.json({code: 200});
 			})
 			.catch((err) => {
 				res.send(err);
 			})
 	}
-	
+
 	settleController (req, res) {
 		let settlesql = SQL.findAllForSettle(req.query.id);
 		service.query(settlesql)
@@ -132,43 +130,74 @@ class RoutesController {
 	}
 
 	postSettleController (req, res) {
-		console.log('req.body==>',req.body);
 		let settlesql = SQL.updateOneForShopcart(req.body);
-		console.log('settlesql==',settlesql);
 		service.query(settlesql)
-		  .then((result) => {
-		  	res.json({msg:'结算成功'});
-
-		  })
-		  .catch((err)=>{
-		  	res.send(err);
-		  })
+			.then((result) => {
+				res.json({msg: '结算成功'});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
 	}
-	myController(req,res){
+
+	myController (req, res) {
 		let myingsql = SQL.findAllForSettleBuy(req.query);
 		service.query(myingsql)
-		  .then((result) =>{
-		  	res.send(result)
-		  })
-		  .catch((err)=>{
-		  	res.send(err);
-		  })
-	}
-	myorderController(req,res){
-		let myordersql = SQL.findAllForSettleOrder(req.query);
-		service.query(myordersql)
-		  .then((result) =>{
-		  	result.forEach((v) => {
-					v.buyTime = moment(v.buyTime).format('YYYY-MM-DD');
-				});
-		  	res.send(result)
-		  })
-		  .catch((err)=>{
-		  	res.send(err);
-		  })
+			.then((result) => {
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
 	}
 
-	
+	myorderController (req, res) {
+		let myordersql = SQL.findAllForSettleOrder(req.query);
+		service.query(myordersql)
+			.then((result) => {
+				result.forEach((v) => {
+					v.buyTime = moment(v.buyTime).format('YYYY-MM-DD');
+				});
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	updatecommentController (req, res) {
+		let commentsql = SQL.insertOneForComment(req.body);
+		service.query(commentsql)
+			.then((result) => {
+				res.json({"msg": "评论成功"});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	updateshopcartController (req, res) {
+		let shopcartsql = SQL.updateOneForShopcartComment(req.body);
+		service.query(shopcartsql)
+			.then((result) => {
+				res.json({"msg": "评论成功"});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	searchController (req, res) {
+		let searchsql = SQL.searchAllForWord(req.query);
+		service.query(searchsql)
+			.then((result) => {
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
 
 }
 

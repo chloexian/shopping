@@ -37,9 +37,11 @@ angular.module('app')
 
 				initPopover: function (scope) {
 					$ionicModal.fromTemplateUrl('/templates/popover/popover.html', {
+						animation: 'slide-in-up',
 				    scope: scope
 				  }).then(function(popover) {
 				    scope.popover = popover;
+				    
 				  });
 				},
 

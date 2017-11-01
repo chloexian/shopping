@@ -4,7 +4,7 @@ angular.module('app')
 		utils.tips.showLoadTips();
 		API.fetchGet('/my', {email: $rootScope.user.email})
 			.then(function (data) {
-				$scope.data = data;
+				$scope.data = data.data;
 				utils.tips.hideLoadTips();
 			})
 			.catch(function (err) {

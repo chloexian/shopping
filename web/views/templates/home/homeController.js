@@ -1,5 +1,5 @@
 angular.module('app')
-	.controller('homeController', ['$scope', 'API', 'utils', function ($scope, API, utils) {
+	.controller('homeController', ['$scope', '$state', 'API', 'utils', function ($scope, $state, API, utils) {
 
 		utils.tips.showLoadTips();
 		API.fetchGet('/main/home')
@@ -11,5 +11,10 @@ angular.module('app')
 				console.log(err);
 				utils.tips.hideLoadTips();
 			})
+
+
+		$scope.getFocus = function (stateName) {
+			$state.go(stateName)
+		}
 
 	}])

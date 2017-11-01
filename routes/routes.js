@@ -25,4 +25,10 @@ module.exports = function (app) {
     app.get('/my', RoutesController.myController);
 
     app.get('/myorder', RoutesController.myorderController);
+
+    app.post('/updatecomment/:id', RoutesController.updatecommentController);
+
+    app.post('/updateShopcart/:id', RoutesController.updateshopcartController);
+
+    app.get('/search/:id', RoutesController.searchController);
 }
