@@ -3,9 +3,9 @@ angular.module('app')
         
 
         $rootScope.user = {
-        	uid:3,
-        	nickname:'nickname',
-        	email:'123@qq.com'
+        	uid:'',
+        	nickname:'',
+        	email:''
         }
 
 		$rootScope.goPage = function (stateName, params) {

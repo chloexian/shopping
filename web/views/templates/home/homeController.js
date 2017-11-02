@@ -1,6 +1,6 @@
 angular.module('app')
-	.controller('homeController', ['$scope', '$state', 'API', 'utils', function ($scope, $state, API, utils) {
-
+	.controller('homeController', ['$rootScope','$scope', '$state', 'API', 'utils', function ($rootScope,$scope, $state, API, utils) {
+              console.log($rootScope.user);
 		utils.tips.showLoadTips();
 		API.fetchGet('/main/home')
 			.then(function (data) {

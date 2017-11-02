@@ -117,6 +117,16 @@ angular.module('app')
 					}]
 				}
 			})
+			.state('modifypwd', {
+				url: '/modifypwd',
+				templateUrl: '/templates/modifypwd/modifypwd.html',
+				controller: 'modifypwdController',
+				resolve: {
+					des: ['$ocLazyLoad', function ($ocLazyLoad) {
+						return $ocLazyLoad.load('modifypwd');
+					}]
+				}
+			})
 
 
 

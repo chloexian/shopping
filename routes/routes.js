@@ -31,4 +31,10 @@ module.exports = function (app) {
     app.post('/updateShopcart/:id', RoutesController.updateshopcartController);
 
     app.get('/search/:id', RoutesController.searchController);
+
+    app.get('/modifypwd', RoutesController.modifypwdController);
+
+    app.post('/modifynewpwd', RoutesController.modifynewpwdController);
+
+
 }
