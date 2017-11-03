@@ -14,20 +14,16 @@ angular.module('app')
 			API.fetchPost('/login', $scope.data)
 				.then(function (data) {
 					utils.tips.hideLoadTips();
-					console.log('data',data);
-					
+					showTips(data.data[0].msg);
 					if (data.data[0].code === 200) {
 						$rootScope.user.uid = data.data[0].uid;
 						$rootScope.user.email = data.data[0].email;
 						$rootScope.user.nickname = data.data[0].nickname;
-						showTips(data.data[0].msg);
 
 						$timeout(function () {
 							$scope.tips.close();
 							$state.go('main.home');
 						}, 1000);
-					}else{
-						showTips(data.data.msg);
 					}
 					
 				})

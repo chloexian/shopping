@@ -49,7 +49,7 @@ class RoutesController {
 					}
 					res.send(result);
 				} else {
-					res.send(common.login.warning);
+					res.send([common.login.warning]);
 				}
 			})
 			.catch((err) => {
@@ -238,6 +238,26 @@ class RoutesController {
 			.catch((err) => {
 				res.send(err)
 			})
+	}
+
+	sendSMSController (req, res) {
+		let time = new Date().getTime().toString();
+		let code = time.substr(time.length - 4, 4);
+		let smsOptions = {
+			PhoneNumbers: req.body.PhoneNumbers, //接收短信手机号
+		  SignName: '粤企APP', //短信签名
+		  TemplateCode: 'SMS_109035006', //短信模板代码
+		  TemplateParam: '{"code":"' + code + '"}'  //短信验证码
+		};
+
+		utils.sendSMS(smsOptions, function (s) {
+			console.log('s ==> ', s);
+			if (s.Code == 'OK') {
+				res.json({msg: '短信发送成功, 请注意查收'});
+			}
+		}, function (err) {
+			res.json({msg: '短信验证码获取失败'});
+		})
 	}
 
 }
